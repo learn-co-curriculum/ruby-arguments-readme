@@ -365,7 +365,7 @@ end
 say_ten_times("You're awesome") # phrase now equals "You're awesome"
 # > Will say "You're awesome" ten times
 say_ten_times("You're programming") # phrase now equals "You're programming"
-# > Will say "You're awesome" ten times
+# > Will say "You're programming" ten times
 say_ten_times # > Will raise an ArgumentError, 0 for 1.
 ```
 
