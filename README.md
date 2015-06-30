@@ -216,7 +216,7 @@ def count_from_to(start_of_range = 1, end_of_range)
 end
 ```
 
-In our argument list, `(start_of_range = 1, end_of_range)`, we simply assign the argument `start_of_range` a default value of `1`. By doing so, if the method is evoked with only one supplied argument, ruby will assume the value of the other argument to be its defaut, `1`:
+In our argument list, `(start_of_range = 1, end_of_range)`, we simply assign the argument `start_of_range` a default value of `1`. By doing so, if the method is evoked with only one supplied argument, ruby will assume the value of the other argument to be its default, `1`:
 
 ```ruby
 #                 assigning a default value
@@ -369,7 +369,7 @@ say_ten_times("You're programming") # phrase now equals "You're programming"
 say_ten_times # > Will raise an ArgumentError, 0 for 1.
 ```
 
-In the first example we abstract the phrased said 10 times out of the literal method name and into a dynamic required method argument. But if we evoke the method without a phrase to say, we get an ArgumentError, after all, how can we say something 10 times when we don't even know what we're saying?
+In the first example we abstract the phrase said 10 times out of the literal method name and into a dynamic required method argument. But if we evoke the method without a phrase to say, we get an ArgumentError, after all, how can we say something 10 times when we don't even know what we're saying?
 
 Let's make it more dynamic with a default phrase.
 
@@ -412,7 +412,7 @@ end
 
 say_x_times(10)
 # > Will print "Hello" 10 times.
-# Since x is required and phrased is optional, ruby assumes that 10 is the
+# Since x is required and phrase is optional, ruby assumes that 10 is the
 # value for the required argument, x, and not the optional argument, phrase.
 
 say_x_times("I can code", 10)
@@ -448,7 +448,7 @@ princess_peaches_castle
 
 The `evil_monster` variable is out of scope for this method. The method can't access it **unless we pass it in as an argument**. 
 
-If we define out method to accept an argument, we can pass our variable into the method and the method will be able to operate on/use that variable. Let's take a look: 
+If we define our method to accept an argument, we can pass our variable into the method and the method will be able to operate on/use that variable. Let's take a look: 
 
 ```ruby
 evil_monster = "Bowser"
