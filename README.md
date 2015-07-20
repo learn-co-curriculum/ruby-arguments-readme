@@ -142,9 +142,37 @@ def count_from_one_to(end_of_range)
 end
 ```
 
-Now, we've defined our method to take in an argument and that argument will inform the `.upto` loop when to stop counting. 
+Now, we've defined our method to take in an argument and that argument will inform the `.upto` loop when to stop counting. Now it's your turn!
 
-##### Defining Methods with Multiple Arguments
+%%%
+
+#### Code Challenge I: Defining Methods with and Argument
+
+Define a method, `plus_one_machine` that takes in an argument of a number and adds `1` to that number. Then, invoke the method with an argument of `9`. 
+
+~~~ruby
+
+# define your method here!
+
+# invoke your method here!
+
+~~~solution
+
+def plus_one_machine(num)
+  num + 1
+end
+
+plus_one_machine(9)
+
+~~~validation
+
+assert_equal(response, 10)
+
+~~~
+
+%%%
+
+#### Defining Methods with Multiple Arguments
 
 You can define a method to accept as many arguments as you want. In the example above, as dynamic as our `count_from_one_to` method is now that it accepts an `end_of_range` at which to stop counting, it still allows start at `1`. What if we wanted to change that as well? We could code the method to accept two arguments:
 
@@ -167,7 +195,36 @@ count_from_to(5,25)
 # > 25
 ```
 
-To accept multiple arguments, simply separate the barewords in the argument list with commas.
+To accept multiple arguments, simply separate the barewords in the argument list with commas. Give it a shot:
+
+%%%
+
+#### Code Challenge II: Defining Methods with Multiple Arguments
+
+Define a method, `sum_machine` that takes in two arguments, two integers, and adds those integers together. Then, invoke the method with an arguments of `9` and `1`. 
+
+~~~ruby
+
+# define your method here!
+
+# invoke your method here!
+
+~~~solution
+
+def sum_machine(num1, num2)
+  num1 + num2
+end
+
+sum_machine(9, 1)
+
+~~~validation
+
+assert_equal(response, 10)
+
+~~~
+
+%%%
+
 
 #### Required Arguments
 
@@ -286,7 +343,35 @@ count_from_to(10,20)
 # > 20
 ```
 
-Method arguments, both required and optional, make methods powerfully abstract and dynamic machines that are easy to build yet very flexible and adaptable to different situations and requirements. Get used to defining methods with required and default arguments and calling them correctly.
+Method arguments, both required and optional, make methods powerfully abstract and dynamic machines that are easy to build yet very flexible and adaptable to different situations and requirements. Get used to defining methods with required and default arguments and calling them correctly. Let's give default arguments a try right now: 
+
+%%%
+
+#### Code Challenge III: Defining Methods with Default Arguments
+
+Define a method, `plus_one_or_whatever` that takes in a required argument of a number and a default argument of `1`. The method should return the sum of the two arguments. Then call your method with **only one argument**, `9`. It will return `10` because of your default argument!
+
+~~~ruby
+
+# define your method here
+
+# invoke it here!
+
+~~~solution
+
+def plus_one_or_whatever(num1, num2=1)
+  num1 + num2
+end
+
+plus_one_or_whatever(9)
+
+~~~validation
+
+assert_equal(response, 10)
+
+~~~
+
+%%%
 
 ### 3. Using Arguments in Methods
 
