@@ -475,7 +475,7 @@ say_ten_times
 
 Awesome, no more errors and we have a default value for the variable `phrase` within the method.
 
-Let's take it a step further; in addition to abstracting the phrase repeated, yet providing a default phrase "Hello", let's abstract the amount of times the phase is repeated. So we add an additional argument to the method.
+Let's take it a step further; in addition to abstracting the phrase repeated, yet providing a default phrase "Hello", let's abstract the amount of times the phrase is repeated. So we add an additional argument to the method.
 
 ```ruby
 def say_x_times(phrase = "Hello", x)
