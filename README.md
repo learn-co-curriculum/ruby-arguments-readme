@@ -343,7 +343,6 @@ count_from_to(10,20)
 # > 20
 ```
 
-<<<<<<< HEAD
 Method arguments, both required and optional, make methods powerfully abstract and dynamic machines that are easy to build yet very flexible and adaptable to different situations and requirements. Get used to defining methods with required and default arguments and calling them correctly. Let's give default arguments a try right now: 
 
 %%%
