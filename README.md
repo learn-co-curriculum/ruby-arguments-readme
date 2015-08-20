@@ -316,7 +316,7 @@ Default arguments are easy to add, you simply assign them a default value with `
 ```ruby
 #                 1 arg with default, 2 arg with default
 def count_from_to(start_of_range = 1, end_of_range = 100)
-  start_of_range.upto(end_range) do |i|
+  start_of_range.upto(end_of_range) do |i|
     puts i
   end
 end
