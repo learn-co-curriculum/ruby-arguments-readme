@@ -402,7 +402,7 @@ end
 
 When we build that method we might ask ourselves, "up to what number might this method count?". The answer is "any number supplied, it doesn't matter." That's what makes the method abstract, the detail of what number it counts up to is hidden until the method is actually invoked: `count_from_one_to(10)`. Only then do we know that the method counts up to `10`. The value of `end_of_range` is only supplied upon evocation.
 
-When we define a method argument, we can assume that a valid value for that argument is provided upon execution of the method. The point of the argument is to make some aspect of the methods procedure abstract. Compare the original method `count_from_one_to_ten` to our dynamic method with an argument for the end of the counting.
+When we define a method argument, we can assume that a valid value for that argument is provided upon execution of the method. The point of the argument is to make some aspect of the method's procedure abstract. Compare the original method `count_from_one_to_ten` to our dynamic method with an argument for the end of the counting.
 
 ```ruby
 def count_from_one_to_ten
