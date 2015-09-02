@@ -309,7 +309,7 @@ We can now invoke this method with `count_from_to(100)` to count from `1` to `10
 
 You can also invoke it with `count_from_to(100,1000)` to count from `100` to `1000`, now supplying values for both arguments. 
 
-That's the power of abstraction when combining methods with arguments. You can build a machine, a method, that changes it's behavior when it is invoked, even containing defaults for certain values.
+That's the power of abstraction when combining methods with arguments. You can build a machine, a method, that changes its behavior when it is invoked, even containing defaults for certain values.
 
 Default arguments are easy to add, you simply assign them a default value with `=` ("equals") in the argument list to inherit if the argument is not supplied upon evocation. There's no limit to the amount of arguments that you can make default.
 
