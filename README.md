@@ -146,7 +146,7 @@ Now, we've defined our method to take in an argument and that argument will info
 
 %%%
 
-#### Code Challenge I: Defining Methods with and Argument
+#### Code Challenge I: Defining Methods with an Argument
 
 Define a method, `plus_one_machine` that takes in an argument of a number and adds `1` to that number. Then, invoke the method with an argument of `9`. 
 
