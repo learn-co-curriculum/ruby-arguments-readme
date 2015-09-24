@@ -1,14 +1,19 @@
 # Method Arguments
 
+## Overview
+
+We'll cover how to define a method, how to add arguments, how to make arguments optional by providing a default value, how to use the arguments within the method, and how method scoping works in Ruby.
+
 ## Objectives
 
-1. Understand the purpose of supplying a method with arguments.
-2. Define methods that accept arguments.
-3. Use a method's arguments within the body of the method.
-4. Understand how method scope works in Ruby.
+1. Describe how arguments reference actual values supplied to a method.
+2. Define methods that accept single and multiple arguments.
+3. Invoke a method with all required arguments. 
+4. Create optional arguments with default values.
+5. Use a method's arguments within the body of the method.
+6. Define variable scope inside and outside of methods in Ruby. 
 
-
-### 1. Understanding Arguments
+### Understanding Arguments
 
 Imagine needing to build a method that counts from 1 to 10. We could code something like this, using a cool ruby loop `upto`.
 
@@ -102,7 +107,7 @@ count_from_one_to(100)
 
 Let's dig into how to add arguments to our methods.
 
-### 2. Defining Method Arguments
+### Defining Method Arguments
 
 To add arguments to a method, you specify them in the method signature––the line that starts with `def`. Simply add parentheses after the name of the method and create a placeholder name for your argument. 
 
@@ -375,7 +380,7 @@ assert_equal(response, 10)
 
 Method arguments, both required and optional, make methods powerfully abstract and dynamic machines that are easy to build yet are very flexible and adaptable to different situations and requirements. Get used to defining methods with required and default arguments and calling them correctly.
 
-### 3. Using Arguments in Methods
+### Using Arguments in Methods
 
 Now that we know how to define a method with arguments, either required, optional, or both, we should quickly talk about using those arguments, that data, within the method. Consider the simpler example of `count_from_one_to(end_range)`. This is a simple method that will count up to the number supplied to the method upon invocation.
 
@@ -511,7 +516,7 @@ say_x_times
 
 One last thing before we go...
 
-### 4. Method Scope
+### Method Scope
 
 Methods in ruby create their own scope. **Any local variable created outside of a method will be unavailable inside of a method. In addition, local variables created inside of a method 'fall out of scope' once you're outside the method.**
 
@@ -565,7 +570,5 @@ im_trapped_in_the_method
   #=> NameError: undefined local variable or method `im_trapped_in_the_method' for main:Object
 ```
 
-### Conclusion
 
-That's really it. We've covered how to define a method, how to add arguments, how to make arguments optional by providing a default value, how to use the arguments within the method *and* how method scoping works in Ruby.
 
