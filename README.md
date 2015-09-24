@@ -9,7 +9,7 @@ We'll cover how to define a method, how to add arguments, how to make arguments 
 1. Describe how arguments reference actual values supplied to a method.
 2. Define methods that accept single and multiple arguments.
 3. Invoke a method with all required arguments. 
-4. Create optional arguments with default values
+4. Create optional arguments with default values.
 5. Use a method's arguments within the body of the method.
 6. Define variable scope inside and outside of methods in Ruby. 
 
