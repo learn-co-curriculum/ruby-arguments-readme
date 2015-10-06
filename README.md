@@ -9,10 +9,10 @@ We'll cover how to define a method, how to add arguments, how to make arguments 
 1. Describe how arguments reference actual values supplied to a method.
 2. Define methods that accept single arguments.
 3. Define methods that accept multiple arguments.
-4. Invoke a method with all required arguments. 
+4. Invoke a method with all required arguments.
 5. Create optional arguments with default values.
 6. Use a method's arguments within the body of the method.
-7. Define variable scope inside and outside of methods in Ruby. 
+7. Define variable scope inside and outside of methods in Ruby.
 
 ### Understanding Arguments
 
@@ -21,7 +21,7 @@ Imagine needing to build a method that counts from 1 to 10. We could code someth
 ```ruby
 def count_from_one_to_ten
   1.upto(10) do |i| # Opens the loop for all number between 1 and 10
-    # Don't worry about the line above, just know that the next line 
+    # Don't worry about the line above, just know that the next line
     # executes once for every number between 1 and 10, with i being
     # equal to the current number or iteration on every loop (1,2,3,etc).    
     puts i
@@ -110,20 +110,20 @@ Let's dig into how to add arguments to our methods.
 
 ### Defining Method Arguments
 
-To add arguments to a method, you specify them in the method signature––the line that starts with `def`. Simply add parentheses after the name of the method and create a placeholder name for your argument. 
+To add arguments to a method, you specify them in the method signature––the line that starts with `def`. Simply add parentheses after the name of the method and create a placeholder name for your argument.
 
-For example, if I want to write a method called `greeting` that accepts an argument of a person's name, I would do it like this: 
+For example, if I want to write a method called `greeting` that accepts an argument of a person's name, I would do it like this:
 
 ```ruby
     #method name      #argument
 def greeting_a_person(name)
   "Hello " + name
 end
-``` 
+```
 
 Arguments create new local variables that can be used within the method. When you name an argument, all you are defining is what bareword you want to use to access that data, just like when you create a variable. Arguments follow the same rules as local variables: they can be any word that starts with a lowercase letter and they should be as descriptive of the data as possible.
 
-Let's look at an example of a method that takes in an argument and sets that argument as the value of a local variable: 
+Let's look at an example of a method that takes in an argument and sets that argument as the value of a local variable:
 
 ```ruby
 def arguments_and_local_variables(name)
@@ -132,12 +132,11 @@ def arguments_and_local_variables(name)
 end
 
 arguments_and_local_variables("George R.R. Martin")
-  #=> "Hello George R.R. Martin"
+#=> "Hello George R.R. Martin"
 
 ```
 
 Let's revisit our earlier example, `count_from_one_to`:
-
 
 ```ruby
   # method name       argument list
@@ -148,35 +147,7 @@ def count_from_one_to(end_of_range)
 end
 ```
 
-Now, we've defined our method to take in an argument and that argument will inform the `.upto` loop when to stop counting. Now it's your turn!
-
-%%%
-
-#### Code Challenge I: Defining Methods with an Argument
-
-Define a method, `plus_one_machine` that takes in an argument of a number and adds `1` to that number. Then, invoke the method with an argument of `9`. 
-
-~~~ruby
-
-# define your method here!
-
-# invoke your method here!
-
-~~~solution
-
-def plus_one_machine(num)
-  num + 1
-end
-
-plus_one_machine(9)
-
-~~~validation
-
-assert_equal(response, 10)
-
-~~~
-
-%%%
+Now, we've defined our method to take in an argument and that argument will inform the `.upto` loop when to stop counting.
 
 #### Defining Methods with Multiple Arguments
 
@@ -201,36 +172,7 @@ count_from_to(5,25)
 # > 25
 ```
 
-To accept multiple arguments, simply separate the barewords in the argument list with commas. Give it a shot:
-
-%%%
-
-#### Code Challenge II: Defining Methods with Multiple Arguments
-
-Define a method, `sum_machine` that takes in two arguments, two integers, and adds those integers together. Then, invoke the method with an arguments of `9` and `1`. 
-
-~~~ruby
-
-# define your method here!
-
-# invoke your method here!
-
-~~~solution
-
-def sum_machine(num1, num2)
-  num1 + num2
-end
-
-sum_machine(9, 1)
-
-~~~validation
-
-assert_equal(response, 10)
-
-~~~
-
-%%%
-
+To accept multiple arguments, simply separate the barewords in the argument list with commas.
 
 #### Required Arguments
 
@@ -313,7 +255,7 @@ end
 
 We can now invoke this method with `count_from_to(100)` to count from `1` to `100`. Invoking this method with only one (1) argument forces ruby to assume that you, the programmer, are supplying a value for the undefined argument `end_of_range` and not for `start_of_range` which has a default value.
 
-You can also invoke it with `count_from_to(100,1000)` to count from `100` to `1000`, now supplying values for both arguments. 
+You can also invoke it with `count_from_to(100,1000)` to count from `100` to `1000`, now supplying values for both arguments.
 
 That's the power of abstraction when combining methods with arguments. You can build a machine, a method, that changes its behavior when it is invoked, even containing defaults for certain values.
 
@@ -349,35 +291,7 @@ count_from_to(10,20)
 # > 20
 ```
 
-Method arguments, both required and optional, make methods powerfully abstract and dynamic machines that are easy to build yet very flexible and adaptable to different situations and requirements. Get used to defining methods with required and default arguments and calling them correctly. Let's give default arguments a try right now: 
-
-%%%
-
-#### Code Challenge III: Defining Methods with Default Arguments
-
-Define a method, `plus_one_or_whatever` that takes in a required argument of a number and a default argument of `1`. The method should return the sum of the two arguments. Then call your method with **only one argument**, `9`. It will return `10` because of your default argument!
-
-~~~ruby
-
-# define your method here
-
-# invoke it here!
-
-~~~solution
-
-def plus_one_or_whatever(num1, num2=1)
-  num1 + num2
-end
-
-plus_one_or_whatever(9)
-
-~~~validation
-
-assert_equal(response, 10)
-
-~~~
-
-%%%
+Method arguments, both required and optional, make methods powerfully abstract and dynamic machines that are easy to build yet very flexible and adaptable to different situations and requirements. Get used to defining methods with required and default arguments and calling them correctly.
 
 Method arguments, both required and optional, make methods powerfully abstract and dynamic machines that are easy to build yet are very flexible and adaptable to different situations and requirements. Get used to defining methods with required and default arguments and calling them correctly.
 
@@ -438,7 +352,7 @@ Method arguments simply create local variables for you to refer to the value use
 
 ```ruby
 def say_hello_ten_times
-  10.times do 
+  10.times do
     puts "Hello"
   end
 end
@@ -449,10 +363,10 @@ say_hello_ten_times
 The first thing we should abstract from this very literal method is the phrase that is being said ten (10) times. Let's add an argument to the method and use it within the method body.
 
 ```ruby
-def say_ten_times(phrase) 
+def say_ten_times(phrase)
   # phrase is a local variable referencing the value passed on evocation.
-  10.times do 
-    puts phrase 
+  10.times do
+    puts phrase
   end
 end
 say_ten_times("You're awesome") # phrase now equals "You're awesome"
@@ -468,7 +382,7 @@ Let's make it more dynamic with a default phrase.
 
 ```ruby
 def say_ten_times(phrase = "Hello")
-  10.times do 
+  10.times do
     puts phrase
   end
 end
@@ -487,7 +401,7 @@ Let's take it a step further; in addition to abstracting the phrase repeated, ye
 def say_x_times(phrase = "Hello", x)
 # Below, the once literal value 10 is replaced with the dynamic value of x
 # supplied to the method when it is evoked.
-  x.times do 
+  x.times do
     puts phrase
   end
 end
@@ -497,7 +411,7 @@ Notice where we once used the literal value `10` in the method body, we now repl
 
 ```ruby
 def say_x_times(phrase = "Hello", x)
-  x.times do 
+  x.times do
     puts phrase
   end
 end
@@ -512,7 +426,7 @@ say_x_times("I can code", 10)
 
 say_x_times
 # > ArgumentError: wrong number of arguments (0 for 1..2)
-# Calling the method with no arguments raises an error. 
+# Calling the method with no arguments raises an error.
 ```
 
 One last thing before we go...
@@ -521,9 +435,9 @@ One last thing before we go...
 
 Methods in ruby create their own scope. **Any local variable created outside of a method will be unavailable inside of a method. In addition, local variables created inside of a method 'fall out of scope' once you're outside the method.**
 
-Think of a method as a castle. The `def` and `end` keywords are like the gates that keep out the barbarian hordes, dragons, etc. Let's take a look: 
+Think of a method as a castle. The `def` and `end` keywords are like the gates that keep out the barbarian hordes, dragons, etc. Let's take a look:
 
-```ruby 
+```ruby
 evil_monster = "Bowser"
 
 def princess_peaches_castle
@@ -531,16 +445,16 @@ def princess_peaches_castle
 end
 ```
 
-We've defined the variable `evil_monster` *outside* of the method, `princess_peaches_castle`. Then, we try to call on the `evil_monster` variable inside that method. Watch what happens when we invoke the method: 
+We've defined the variable `evil_monster` *outside* of the method, `princess_peaches_castle`. Then, we try to call on the `evil_monster` variable inside that method. Watch what happens when we invoke the method:
 
 ```ruby
 princess_peaches_castle
   #=> NameError: undefined local variable or method `evil_monster' for main:Object
 ```
 
-The `evil_monster` variable is out of scope for this method. The method can't access it **unless we pass it in as an argument**. 
+The `evil_monster` variable is out of scope for this method. The method can't access it **unless we pass it in as an argument**.
 
-If we define our method to accept an argument, we can pass our variable into the method and the method will be able to operate on/use that variable. Let's take a look: 
+If we define our method to accept an argument, we can pass our variable into the method and the method will be able to operate on/use that variable. Let's take a look:
 
 ```ruby
 evil_monster = "Bowser"
@@ -550,11 +464,11 @@ def princess_peaches_castle(bad_guy)
 end
 
 princess_peaches_castle(evil_monster)
-  |––> "Bowser is trying to kidnap Princess Peach!"
+#> "Bowser is trying to kidnap Princess Peach!"
 
 ```
 
-And now Mario can start his adventure. 
+And now Mario can start his adventure.
 
 So far, we've seen that variables defined outside of methods are not available inside methods (unless we pass them in as arguments). This works the other way around as well: variables defined inside of methods are not available outside of those methods. Let's take a look. If we define the following method to include a local variable:
 
@@ -568,8 +482,5 @@ Trying to access that variable elsewhere in our program, *outside of this method
 
 ```ruby
 im_trapped_in_the_method
-  #=> NameError: undefined local variable or method `im_trapped_in_the_method' for main:Object
+#=> NameError: undefined local variable or method `im_trapped_in_the_method' for main:Object
 ```
-
-
-
