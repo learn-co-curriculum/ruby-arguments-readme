@@ -293,8 +293,6 @@ count_from_to(10,20)
 
 Method arguments, both required and optional, make methods powerfully abstract and dynamic machines that are easy to build yet very flexible and adaptable to different situations and requirements. Get used to defining methods with required and default arguments and calling them correctly.
 
-Method arguments, both required and optional, make methods powerfully abstract and dynamic machines that are easy to build yet are very flexible and adaptable to different situations and requirements. Get used to defining methods with required and default arguments and calling them correctly.
-
 ### Using Arguments in Methods
 
 Now that we know how to define a method with arguments, either required, optional, or both, we should quickly talk about using those arguments, that data, within the method. Consider the simpler example of `count_from_one_to(end_range)`. This is a simple method that will count up to the number supplied to the method upon invocation.
