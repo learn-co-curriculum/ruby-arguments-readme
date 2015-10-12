@@ -308,7 +308,7 @@ end
 # > count_from_one_to(50) # Will count from 1 to 50
 ```
 
-When we define a method with arguments we are defining a bareword that we can use to reference the actual value supplied to the method upon invocation. We built a method that will count from `1` to any specified number. When we actually call that method, we need a word, an abstraction, a variable, that we can refer to that idea of "any specified number" as. That's an argument.
+When we define a method with arguments we are defining a bareword that we can use to reference the actual value supplied to the method upon invocation. We built a method that will count from `1` to any specified number. When we actually call that method, we need a word, an abstraction, a variable, with which we can refer to that idea of "any specified number". That's an argument.
 
 ```ruby
 def count_from_one_to(end_of_range)
