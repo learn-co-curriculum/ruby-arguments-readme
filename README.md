@@ -344,7 +344,7 @@ The bareword we use as the argument's name in the method signature becomes a loc
 
 With the code above, when we say: `count_from_one_to(100)`, the value of the argument `end_of_range` is `100`. During the particular runtime invoked by `count_from_one_to(100)`, any reference to `end_of_range` will have the value of `100`, allowing the method to behave as intended.
 
-Similarly, when we say: `count_from_one_to(50)`, the value of the argument `end_of_range` is `50`. So During that particular invocation, `count_from_one_to(50)` the value of the argument `end_of_range` is `50`, so the method behaves differently.
+Similarly, when we say: `count_from_one_to(50)`, the value of the argument `end_of_range` is `50`. So during that particular invocation, `count_from_one_to(50)` the value of the argument `end_of_range` is `50`, so the method behaves differently.
 
 Method arguments simply create local variables for you to refer to the value used when the method is actually invoked. Imagine the following examples:
 
