@@ -10,7 +10,6 @@ We'll cover how to define a method, how to add arguments, how to make arguments 
 2. Define methods that accept single arguments.
 3. Define methods that accept multiple arguments.
 4. Invoke a method with all required arguments.
-5. Create optional arguments with default values.
 6. Use a method's arguments within the body of the method.
 7. Define variable scope inside and outside of methods in Ruby.
 
@@ -199,99 +198,6 @@ count_from_one_to(100, 5) # The method accepts 1 argument and I supplied 2.
 ```
 
 By default, all arguments defined in a method are required in order to correctly invoke (or "call", or "execute") that method. If you build the method to behave a certain way and have certain expectations about data, you must follow those rules.
-
-#### Optional Arguments with Default Values
-
-Often we want our methods to accept arguments but also have a default value for that argument. Imagine our use case of the method `count_from_to`. We designed that method to be very dynamic, you can supply it with two (2) values, a number to start counting from and a number to stop counting at. That means that if we want to count from `1` to `100`, we need to invoke `count_from_to(1,100)`, if we want to count from `1` to `10`, we need to invoke `count_from_to(1,10)`, from `1` to `1000`, we need to invoke `count_from_to(1,1000)`. It's probably a reasonable assumption that unless specified, we want to start counting from `1`. However, given the method definition of:
-
-```ruby
-def count_from_to(start_of_range, end_of_range)
-  # ...
-end
-```
-
-We would constantly need to provide a value for the argument `start_of_range`, even if it was obvious and common, like the value `1`. The method is defined to require two arguments no matter what. Invoking it as `count_from_to(100)` would raise `ArgumentError: wrong number of arguments (1 for 2)`.
-
-How can we supply a default value for an argument thereby making it optional upon method invocation? Simple. In the argument list, assign a **default value**.
-
-```ruby
-#                 assigning a default value
-def count_from_to(start_of_range = 1, end_of_range)
-  # ...
-end
-```
-
-In our argument list, `(start_of_range = 1, end_of_range)`, we simply assign the argument `start_of_range` a default value of `1`. By doing so, if the method is invoked with only one supplied argument, ruby will assume the value of the other argument to be its default, `1`:
-
-```ruby
-#                 assigning a default value
-def count_from_to(start_of_range = 1, end_of_range)
-  # ...
-end
-
-count_from_to(100)
-# Will count from 1 to 100
-
-count_from_to(10)
-# Will count from 1 to 10
-
-count_from_to(10, 100)
-# Will count from 10 to 100
-
-count_from_to
-# Will raise an ArgumentError: wrong number of arguments (0 for 1..2)
-```
-
-With default arguments our once simple machine becomes profoundly useful and abstract:
-
-```ruby
-#                 1 arg with default, 2 required arg
-def count_from_to(start_of_range = 1, end_of_range)
-  start_of_range.upto(end_of_range) do |i|
-    puts i
-  end
-end
-```
-
-We can now invoke this method with `count_from_to(100)` to count from `1` to `100`. Invoking this method with only one (1) argument forces ruby to assume that you, the programmer, are supplying a value for the undefined argument `end_of_range` and not for `start_of_range` which has a default value.
-
-You can also invoke it with `count_from_to(100,1000)` to count from `100` to `1000`, now supplying values for both arguments.
-
-That's the power of abstraction when combining methods with arguments. You can build a machine, a method, that changes its behavior when it is invoked, even containing defaults for certain values.
-
-Default arguments are easy to add, you simply assign them a default value with `=` ("equals") in the argument list to inherit if the argument is not supplied upon evocation. There's no limit to the amount of arguments that you can make default.
-
-```ruby
-#                 1 arg with default, 2 arg with default
-def count_from_to(start_of_range = 1, end_of_range = 100)
-  start_of_range.upto(end_of_range) do |i|
-    puts i
-  end
-end
-
-count_from_to
-# > 1
-# > 2
-# > 3
-# > ...
-# > 100
-
-count_from_to(10)
-# > 10
-# > 11
-# > 12
-# > ...
-# > 100
-
-count_from_to(10,20)
-# > 10
-# > 11
-# > 12
-# > ...
-# > 20
-```
-
-Method arguments, both required and optional, make methods powerfully abstract and dynamic machines that are easy to build yet very flexible and adaptable to different situations and requirements. Get used to defining methods with required and default arguments and calling them correctly.
 
 ### Using Arguments in Methods
 
