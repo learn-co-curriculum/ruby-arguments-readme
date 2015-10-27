@@ -457,8 +457,8 @@ If we define our method to accept an argument, we can pass our variable into the
 ```ruby
 evil_monster = "Bowser"
 
-def princess_peaches_castle(bad_guy)
-  puts "#{bad_guy} is trying to kidnap Princess Peach!"
+def princess_peaches_castle(evil_monster)
+  puts "#{evil_monster} is trying to kidnap Princess Peach!"
 end
 
 princess_peaches_castle(evil_monster)
