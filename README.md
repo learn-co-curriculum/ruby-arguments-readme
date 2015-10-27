@@ -11,103 +11,81 @@ We'll cover how to define a method, how to add arguments, how to make arguments 
 3. Define methods that accept multiple arguments.
 4. Invoke a method with all required arguments.
 6. Use a method's arguments within the body of the method.
-7. Define variable scope inside and outside of methods in Ruby.
 
-### Understanding Arguments
 
-Imagine needing to build a method that counts from 1 to 10. We could code something like this, using a cool ruby loop `upto`.
+## Understanding Arguments
+
+Imagine needing to build a method that greets a person. We could code something like this:
 
 ```ruby
-def count_from_one_to_ten
-  1.upto(10) do |i| # Opens the loop for all number between 1 and 10
-    # Don't worry about the line above, just know that the next line
-    # executes once for every number between 1 and 10, with i being
-    # equal to the current number or iteration on every loop (1,2,3,etc).    
-    puts i
-
-  end # This ends the loop's block.
-end # Ends the method
+def greeting
+	puts "Hi, Ruby programmer!"
+end
 ```
 
-This method will print out every number between `1` and `10`. Try it out, open an IRB session by running `irb` from your command line. Once you're in your IRB shell, paste in the code:
+This method, when called, will print out to the terminal, the string `"Hi, Ruby programmer!"`. Try it out, open an IRB session by running `irb` from your command line. Once you're in your IRB shell, paste in the code:
 
 ```ruby
-def count_from_one_to_ten
-  1.upto(10) do |i|
-    puts i
-  end
+def greeting
+	puts "Hi, Ruby programmer!"
 end
 ```
 
 ```bash
-$ irb
-001:0 > def count_from_one_to_ten
-002:1 >   1.upto(10) do |i|
-003:2>      puts i
-004:2 >   end
-005:1 > end
-=> :count_from_one_to_ten
+// ♥ irb
+2.2.1 :001 > def greeting
+2.2.1 :002?>   puts "Hi, Ruby programmer!"
+2.2.1 :003?>   end
+ => :greeting 
 ```
 
-You've now defined the method. Notice that it did not execute. Type the following into IRB to execute your method: `count_from_one_to_ten`.
+You've now defined the method. Notice that it did not execute. Type the following into IRB to execute your method: `greeting`.
 
 ```bash
-006:0 > count_from_one_to_ten
+2.2.1 :004 > greeting
 ```
 
 You should see:
 
 ```bash
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-=> 1
+Hi, Ruby programmer!
+ => nil 
 ```
 
-As amazing as this method is, it's still pretty literal. It hard-codes, or directly specifies the number to count to and the number to count from. If we wanted to build a method that counts from one to twenty, we'd have to re-implement the majority of the original logic from `count_from_one_to_ten`:
+As amazing as this method is, it's still pretty literal. It hard-codes, or directly specifies, name of the person we are greeting as `"Ruby programmer"`. If we wanted to build a method that can greet *anyone*, even Python programmers, we'd have to re-implement the majority of the original logic from `greeting`:
 
 ```ruby
-def count_from_one_to_twenty
-  1.upto(20) do |i|
-    puts i
-  end
+def greeting_python
+  puts "Hello, Python programmer!"
 end
 ```
 
-Notice the only things that changed are the method name and the number `20` in the body of the method. It's as though that information should be specifiable or configurable when you call the method, otherwise we'd have to build every permutation of the method. Ideally, we would want our method to be more dynamic, more abstract, only providing the details of the number to count to on execution, not on definition.
+Notice the only things that changed are the method name and the language name `"Python"` in the body of the method. It's as though that information should be specifiable or configurable when you call the method, otherwise we'd have to build every permutation of the method. In other words, we'd have to re-write the method for every single person we want to greet. We want our method to be more dynamic, more abstract, *more re-usable*. It should maintain the elements that will always be the same, no matter who we greet, and allow us to change, or swap out, the name of the person we are greeting. This is dynamic, as opposed to "hard-coded". 
 
 Good news, that's exactly what method arguments (also called parameters) are for:
 
 ```ruby
-def count_from_one_to(end_of_range)
-  1.upto(end_of_range) do |i|
-    puts i
-  end
+def greeting(name)
+  puts "Hello, #{name}!"
 end
-
-count_from_one_to(3)
-# > 1
-# > 2
-# > 3
-
-count_from_one_to(100)
-# > 1
-# > 2
-# > 3
-# > ...
-# > 100
 ```
 
-Let's dig into how to add arguments to our methods.
+Above, we define our method to take in an argument by following the method name with parentheses enclosing a variable name: `greeting(name)`. 
 
-### Defining Method Arguments
+Then, we use **string interpolation** inside the method body to `puts` out a greeting using whatever `name` was passed into the argument when the method is called. String interpolation allows use to use a Ruby variable to render a value inside of a string. In other words, if we have a variable, `name`, that points to a value of `"Sophie"`, string interpolation will let us use that `name` variable inside a string to render, or `puts` out, a string that contains the word `"Sophie"`.
+
+To interpolate a variable into a string, wrap that variable name inside curly braces, preceded by a pound sign: `"#{variable_name}`.
+
+Let's call our method and see it in action:
+
+```ruby
+greeting("Sophie")
+ => Hi, Sophie!
+```
+
+Let's take a closer look at how to add arguments to our methods. 
+
+## Defining Method Arguments
 
 To add arguments to a method, you specify them in the method signature––the line that starts with `def`. Simply add parentheses after the name of the method and create a placeholder name for your argument.
 
@@ -116,275 +94,79 @@ For example, if I want to write a method called `greeting` that accepts an argum
 ```ruby
     #method name      #argument
 def greeting_a_person(name)
-  "Hello " + name
+  "Hello #{name}"
 end
 ```
 
-Arguments create new local variables that can be used within the method. When you name an argument, all you are defining is what bareword you want to use to access that data, just like when you create a variable. Arguments follow the same rules as local variables: they can be any word that starts with a lowercase letter and they should be as descriptive of the data as possible.
+Arguments create new local variables that can be used within the method. When you name an argument, you are defining is what bare word you want to use to access that data, just like when you create a variable. Arguments follow the same rules as local variables: they can be any word that starts with a lowercase letter and they should be as descriptive of the data as possible.
 
-Let's look at an example of a method that takes in an argument and sets that argument as the value of a local variable:
+In our `#greeting` method example, we are saying: When you call the `#greeting` method with an argument of `"Sophie"`, set a variable `name` equal to the value of `"Sophie"`. 
+
+
+### Defining Methods with Multiple Arguments
+
+You can define a method to accept as many arguments as you want. Let's try creating a method that accepts two arguments: a person's name and their programming language of choice. 
 
 ```ruby
-def arguments_and_local_variables(name)
-  person = name
-  "Hello " + person
+  # method name      first_argument, second_argument
+def greeting_programmer(name, language)
+  puts "Hello, #{name}. We heard you are a great #{language} programmer."
 end
 
-arguments_and_local_variables("George R.R. Martin")
-#=> "Hello George R.R. Martin"
-
+greeting_programmer("Sophie", "Ruby")
+  => Hello, Sophie. We heard you are a great Ruby programmer. 
+  
+greeting_programmer("Steve", "Elixir")
+  => Hello, Steven. We heard you are a great Elixir programmer.
 ```
 
-Let's revisit our earlier example, `count_from_one_to`:
+To accept multiple arguments, simply separate the bare words in the argument list with commas.
 
-```ruby
-  # method name       argument list
-def count_from_one_to(end_of_range)
-  1.upto(end_of_range) do |i|
-    puts i
-  end
-end
-```
-
-Now, we've defined our method to take in an argument and that argument will inform the `.upto` loop when to stop counting.
-
-#### Defining Methods with Multiple Arguments
-
-You can define a method to accept as many arguments as you want. In the example above, as dynamic as our `count_from_one_to` method is now that it accepts an `end_of_range` at which to stop counting, it still only allows us to start at `1`. What if we wanted to change that as well? We could code the method to accept two arguments:
-
-```ruby
-  # method name   first_argument  second_argument
-def count_from_to(start_of_range, end_of_range)
-  # ... We'll see this implementation below, can you guess it?
-end
-
-count_from_to(1,3)
-# > 1
-# > 2
-# > 3
-
-count_from_to(5,25)
-# > 5
-# > 6
-# > 7
-# > ...
-# > 25
-```
-
-To accept multiple arguments, simply separate the barewords in the argument list with commas.
-
-#### Required Arguments
+### Required Arguments
 
 Once you define arguments for a method, they become required when you invoke or call the method. If you define a method that accepts a singular argument, when you call that method, you must supply a value for that argument, otherwise, you get an `ArgumentError`. Here's an example:
 
 ```ruby
-def count_from_one_to(end_range)
-  # ... etc
+def greeting(name)
+  puts "Hello, #{name}!"
 end
 
-count_from_one_to() # I explicitly call the method without a value for the argument end_range
+greeting # I explicitly call the method without a value for the argument `name`
 # > ArgumentError: wrong number of arguments (0 for 1)
 ```
 
 In Ruby, all arguments are required when you invoke the method. You can't define a method to accept an argument and call the method without that argument. Additionally, a method defined to accept one argument will raise an error if called with more than one argument.
 
+
 ```ruby
-def count_from_one_to(end_range)
-  # ... etc
+def greeting(name)
+  puts "Hello, #{name}!"
 end
 
-count_from_one_to(100, 5) # The method accepts 1 argument and I supplied 2.
+hello("Sophie", "Ruby") # The method accepts 1 argument and I supplied 2.
 # > ArgumentError: wrong number of arguments (2 for 1)
 ```
 
-By default, all arguments defined in a method are required in order to correctly invoke (or "call", or "execute") that method. If you build the method to behave a certain way and have certain expectations about data, you must follow those rules.
+By default, all arguments defined in a method are required in order to correctly invoke (or "call", or "execute") that method.
 
-### Using Arguments in Methods
+## Using Arguments in Methods
 
-Now that we know how to define a method with arguments, either required, optional, or both, we should quickly talk about using those arguments, that data, within the method. Consider the simpler example of `count_from_one_to(end_range)`. This is a simple method that will count up to the number supplied to the method upon invocation.
-
-```ruby
-def count_from_one_to(end_range)
-  1.upto(end_range) do |i|
-    puts i
-  end
-end
-
-# > count_from_one_to(5) # Will count from 1 to 5
-# > count_from_one_to(50) # Will count from 1 to 50
-```
-
-When we define a method with arguments we are defining a bareword that we can use to reference the actual value supplied to the method upon invocation. We built a method that will count from `1` to any specified number. When we actually call that method, we need a word, an abstraction, a variable, with which we can refer to that idea of "any specified number". That's an argument.
+Now that we know how to define a method with arguments, either required, optional, or both, let's take a closer look at using those arguments, that data, within the method. Once again, our greeting method;
 
 ```ruby
-def count_from_one_to(end_of_range)
-  1.upto(end_of_range) do |i|
-    puts i
-  end
+def greeting(name)
+  puts "Hello, #{name}"
 end
 ```
 
-When we build that method we might ask ourselves, "up to what number might this method count?". The answer is "any number supplied, it doesn't matter." That's what makes the method abstract, the detail of what number it counts up to is hidden until the method is actually invoked: `count_from_one_to(10)`. Only then do we know that the method counts up to `10`. The value of `end_of_range` is only supplied upon evocation.
+When we define a method with arguments we are defining a bareword that we can use to reference the actual value supplied to the method upon invocation. We built a method that will greet a specified person. In order to write code in our method to actually greet any given person, we need a placeholder––a way to refer to a generic person's name. This is an argument.
 
-When we define a method argument, we can assume that a valid value for that argument is provided upon execution of the method. The point of the argument is to make some aspect of the method's procedure abstract. Compare the original method `count_from_one_to_ten` to our dynamic method with an argument for the end of the counting.
+When we build that method we might ask ourselves, "who is this method designed to greet?". The answer is "anyone, it doesn't matter." That's what makes the method abstract, the detail of who it greets is hidden until the method is actually invoked: `greeting("Sophie")`. Only then do we know that the method greets Sophie. The value of `name` is only supplied upon invocation.
 
-```ruby
-def count_from_one_to_ten
-  1.upto(10) do |i|
-    puts i
-  end
-end
-count_from_one_to_ten #> Counts from 1 to 10
+**The bareword, in this case `name`, that we use as the argument's name in the method signature becomes a local variable within the method.** Through that variable we can reference the value of the argument supplied at invocation.
 
-def count_from_one_to(end_of_range)
-  1.upto(end_of_range) do |i|
-    puts i
-  end
-end
+With the code above, when we say: `greeting("Sophie")`, the value of the argument `name` is `"Sophie"`. During the particular runtime invoked by `greeting("Sophie")`, any reference to `name` will have the value of `"Sophie"`, allowing the method to behave as intended.
 
-count_from_one_to(100) #> Counts from 1 to 100
-count_from_one_to(50)  #> Counts from 1 to 50
-```
+Similarly, when we say: `greeting("Ann")`, the value of the argument `name` is `"Ann"`. 
 
-The bareword we use as the argument's name in the method signature becomes a local variable within the method. Through that variable we can reference the value of the argument supplied at invocation.
-
-With the code above, when we say: `count_from_one_to(100)`, the value of the argument `end_of_range` is `100`. During the particular runtime invoked by `count_from_one_to(100)`, any reference to `end_of_range` will have the value of `100`, allowing the method to behave as intended.
-
-Similarly, when we say: `count_from_one_to(50)`, the value of the argument `end_of_range` is `50`. So during that particular invocation, `count_from_one_to(50)` the value of the argument `end_of_range` is `50`, so the method behaves differently.
-
-Method arguments simply create local variables for you to refer to the value used when the method is actually invoked. Imagine the following examples:
-
-```ruby
-def say_hello_ten_times
-  10.times do
-    puts "Hello"
-  end
-end
-say_hello_ten_times
-# > Will say "Hello" 10 times.
-```
-
-The first thing we should abstract from this very literal method is the phrase that is being said ten (10) times. Let's add an argument to the method and use it within the method body.
-
-```ruby
-def say_ten_times(phrase)
-  # phrase is a local variable referencing the value passed on evocation.
-  10.times do
-    puts phrase
-  end
-end
-say_ten_times("You're awesome") # phrase now equals "You're awesome"
-# > Will say "You're awesome" ten times
-say_ten_times("You're programming") # phrase now equals "You're programming"
-# > Will say "You're programming" ten times
-say_ten_times # > Will raise an ArgumentError, 0 for 1.
-```
-
-In the first example we abstract the phrase said ten times out of the literal method name and into a dynamic required method argument. But if we invoke the method without a phrase to say, we get an `ArgumentError`; after all, how can we say something ten times when we don't even know what we're saying?
-
-Let's make it more dynamic with a default phrase.
-
-```ruby
-def say_ten_times(phrase = "Hello")
-  10.times do
-    puts phrase
-  end
-end
-
-say_ten_times("I <3 Ruby")
-# > Will say "I <3 Ruby" ten times
-say_ten_times
-# > Will say "Hello", the default value for phrase, ten times.
-```
-
-Awesome, no more errors and we have a default value for the variable `phrase` within the method.
-
-Let's take it a step further; in addition to abstracting the phrase repeated, yet providing a default phrase "Hello", let's abstract the amount of times the phrase is repeated. So we add an additional argument to the method.
-
-```ruby
-def say_x_times(phrase = "Hello", x)
-# Below, the once literal value 10 is replaced with the dynamic value of x
-# supplied to the method when it is evoked.
-  x.times do
-    puts phrase
-  end
-end
-```
-
-Notice where we once used the literal value `10` in the method body, we now replace that with a reference to `x`. The value for `x` will be supplied when the method is invoked, as demonstrated quickly below:
-
-```ruby
-def say_x_times(phrase = "Hello", x)
-  x.times do
-    puts phrase
-  end
-end
-
-say_x_times(10)
-# > Will print "Hello" 10 times.
-# Since x is required and phrase is optional, ruby assumes that 10 is the
-# value for the required argument, x, and not the optional argument, phrase.
-
-say_x_times("I can code", 10)
-# > Will print "I can code" 10 times.
-
-say_x_times
-# > ArgumentError: wrong number of arguments (0 for 1..2)
-# Calling the method with no arguments raises an error.
-```
-
-One last thing before we go...
-
-### Method Scope
-
-Methods in ruby create their own scope. **Any local variable created outside of a method will be unavailable inside of a method. In addition, local variables created inside of a method 'fall out of scope' once you're outside the method.**
-
-Think of a method as a castle. The `def` and `end` keywords are like the gates that keep out the barbarian hordes, dragons, etc. Let's take a look:
-
-```ruby
-evil_monster = "Bowser"
-
-def princess_peaches_castle
-  puts "#{evil_monster} is trying to kidnap Princess Peach!"
-end
-```
-
-We've defined the variable `evil_monster` *outside* of the method, `princess_peaches_castle`. Then, we try to call on the `evil_monster` variable inside that method. Watch what happens when we invoke the method:
-
-```ruby
-princess_peaches_castle
-  #=> NameError: undefined local variable or method `evil_monster' for main:Object
-```
-
-The `evil_monster` variable is out of scope for this method. The method can't access it **unless we pass it in as an argument**.
-
-If we define our method to accept an argument, we can pass our variable into the method and the method will be able to operate on/use that variable. Let's take a look:
-
-```ruby
-evil_monster = "Bowser"
-
-def princess_peaches_castle(evil_monster)
-  puts "#{evil_monster} is trying to kidnap Princess Peach!"
-end
-
-princess_peaches_castle(evil_monster)
-#> "Bowser is trying to kidnap Princess Peach!"
-
-```
-
-And now Mario can start his adventure.
-
-So far, we've seen that variables defined outside of methods are not available inside methods (unless we pass them in as arguments). This works the other way around as well: variables defined inside of methods are not available outside of those methods. Let's take a look. If we define the following method to include a local variable:
-
-```ruby
-def practicing_method_scope
-  im_trapped_in_the_method = "You can't access me outside this method!"
-end
-```
-
-Trying to access that variable elsewhere in our program, *outside of this method*, will raise the following error:
-
-```ruby
-im_trapped_in_the_method
-#=> NameError: undefined local variable or method `im_trapped_in_the_method' for main:Object
-```
+Method arguments simply create local variables for you to refer to the value used when the method is actually invoked. 
