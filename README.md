@@ -98,7 +98,7 @@ def greeting_a_person(name)
 end
 ```
 
-Arguments create new local variables that can be used within the method. When you name an argument, you are defining is what bare word you want to use to access that data, just like when you create a variable. Arguments follow the same rules as local variables: they can be any word that starts with a lowercase letter and they should be as descriptive of the data as possible.
+Arguments create new local variables that can be used within the method. When you name an argument, you are defining what bare word you want to use to access that data, just like when you create a variable. Arguments follow the same rules as local variables: they can be any word that starts with a lowercase letter and they should be as descriptive of the data as possible.
 
 In our `#greeting` method example, we are saying: When you call the `#greeting` method with an argument of `"Sophie"`, set a variable `name` equal to the value of `"Sophie"`. 
 
