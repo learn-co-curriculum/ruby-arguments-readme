@@ -80,7 +80,7 @@ Let's call our method and see it in action:
 
 ```ruby
 greeting("Sophie")
- => Hi, Sophie!
+# > Hi, Sophie!
 ```
 
 Let's take a closer look at how to add arguments to our methods. 
@@ -114,10 +114,10 @@ def greeting_programmer(name, language)
 end
 
 greeting_programmer("Sophie", "Ruby")
-  => Hello, Sophie. We heard you are a great Ruby programmer. 
+# > Hello, Sophie. We heard you are a great Ruby programmer. 
   
 greeting_programmer("Steve", "Elixir")
-  => Hello, Steven. We heard you are a great Elixir programmer.
+# > Hello, Steven. We heard you are a great Elixir programmer.
 ```
 
 To accept multiple arguments, simply separate the bare words in the argument list with commas.
