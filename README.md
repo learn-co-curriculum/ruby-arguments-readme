@@ -2,7 +2,7 @@
 
 ## Overview
 
-We'll cover how to define a method, how to add arguments, how to make arguments optional by providing a default value, how to use the arguments within the method, and how method scoping works in Ruby.
+We'll cover how to define a method, and how to add and use arguments within methods. 
 
 ## Objectives
 
