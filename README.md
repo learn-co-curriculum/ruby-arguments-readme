@@ -151,7 +151,7 @@ By default, all arguments defined in a method are required in order to correctly
 
 ## Using Arguments in Methods
 
-Now that we know how to define a method with arguments, either required, optional, or both, let's take a closer look at using those arguments, that data, within the method. Once again, our greeting method;
+Now that we know how to define a method with arguments, let's take a closer look at using those arguments, that data, within the method. Once again, our greeting method;
 
 ```ruby
 def greeting(name)
