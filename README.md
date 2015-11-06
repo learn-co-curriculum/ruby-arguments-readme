@@ -80,7 +80,7 @@ Let's call our method and see it in action:
 
 ```ruby
 greeting("Sophie")
-# > Hi, Sophie!
+# > Hello, Sophie!
 ```
 
 Let's take a closer look at how to add arguments to our methods. 
