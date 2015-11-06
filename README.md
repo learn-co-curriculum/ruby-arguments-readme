@@ -72,7 +72,7 @@ end
 
 Above, we define our method to take in an argument by following the method name with parentheses enclosing a variable name: `greeting(name)`. 
 
-Then, we use **string interpolation** inside the method body to `puts` out a greeting using whatever `name` was passed into the argument when the method is called. String interpolation allows use to use a Ruby variable to render a value inside of a string. In other words, if we have a variable, `name`, that points to a value of `"Sophie"`, string interpolation will let us use that `name` variable inside a string to render, or `puts` out, a string that contains the word `"Sophie"`.
+Then, we use **string interpolation** inside the method body to `puts` out a greeting using whatever `name` was passed into the argument when the method is called. String interpolation allows us to use a Ruby variable to render a value inside of a string. In other words, if we have a variable, `name`, that points to a value of `"Sophie"`, string interpolation will let us use that `name` variable inside a string to render, or `puts` out, a string that contains the word `"Sophie"`.
 
 To interpolate a variable into a string, wrap that variable name inside curly braces, preceded by a pound sign: `"#{variable_name}`.
 
