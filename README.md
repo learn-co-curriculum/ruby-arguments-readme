@@ -12,6 +12,8 @@ We'll cover how to define a method, and how to add and use arguments within meth
 4. Invoke a method with all required arguments.
 6. Use a method's arguments within the body of the method.
 
+## Video
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FJztnY9E854?rel=0&modestbranding=1" frameborder="0" allowfullscreen></iframe><p><a href="https://www.youtube.com/watch?v=FJztnY9E854">Ruby Method Arguments</a></p>
 
 ## Understanding Arguments
 
