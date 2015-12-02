@@ -172,3 +172,5 @@ With the code above, when we say: `greeting("Sophie")`, the value of the argumen
 Similarly, when we say: `greeting("Ann")`, the value of the argument `name` is `"Ann"`. 
 
 Method arguments simply create local variables for you to refer to the value used when the method is actually invoked. 
+
+<a href='https://learn.co/lessons/ruby-arguments-readme' data-visibility='hidden'>View this lesson on Learn.co</a>
