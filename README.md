@@ -145,7 +145,7 @@ def greeting(name)
   puts "Hello, #{name}!"
 end
 
-hello("Sophie", "Ruby") # The method accepts 1 argument and I supplied 2.
+greeting("Sophie", "Ruby") # The method accepts 1 argument and I supplied 2.
 # > ArgumentError: wrong number of arguments (2 for 1)
 ```
 
