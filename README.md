@@ -18,7 +18,7 @@ We'll cover how to define a method, and how to add and use arguments within meth
 ## Understanding Arguments
 
 Imagine needing to build a method that greets a person. We could code something like this:
-
+s
 ```ruby
 def greeting
 	puts "Hi, Ruby programmer!"
@@ -118,7 +118,7 @@ end
 greeting_programmer("Sophie", "Ruby")
 # > Hello, Sophie. We heard you are a great Ruby programmer. 
   
-greeting_programmer("Steve", "Elixir")
+greeting_programmer("Steven", "Elixir")
 # > Hello, Steven. We heard you are a great Elixir programmer.
 ```
 
