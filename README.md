@@ -18,7 +18,7 @@ We'll cover how to define a method, and how to add and use arguments within meth
 ## Understanding Arguments
 
 Imagine needing to build a method that greets a person. We could code something like this:
-s
+
 ```ruby
 def greeting
 	puts "Hi, Ruby programmer!"
@@ -174,3 +174,5 @@ Similarly, when we say: `greeting("Ann")`, the value of the argument `name` is `
 Method arguments simply create local variables for you to refer to the value used when the method is actually invoked. 
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/ruby-arguments-readme' title='Method Arguments'>Method Arguments</a> on Learn.co and start learning to code for free.</p>
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/ruby-arguments-readme'>Methods and Arguments</a> on Learn.co and start learning to code for free.</p>
