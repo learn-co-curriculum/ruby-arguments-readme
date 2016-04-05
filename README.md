@@ -2,7 +2,7 @@
 
 ## Overview
 
-We'll cover how to define a method, and how to add and use arguments within methods. 
+We'll cover how to define a method, and how to add and use arguments within methods.
 
 ## Objectives
 
@@ -38,7 +38,7 @@ end
 2.2.1 :001 > def greeting
 2.2.1 :002?>   puts "Hi, Ruby programmer!"
 2.2.1 :003?>   end
- => :greeting 
+ => :greeting
 ```
 
 You've now defined the method. Notice that it did not execute. Type the following into IRB to execute your method: `greeting`.
@@ -51,7 +51,7 @@ You should see:
 
 ```bash
 Hi, Ruby programmer!
- => nil 
+ => nil
 ```
 
 As amazing as this method is, it's still pretty literal. It hard-codes, or directly specifies, name of the person we are greeting as `"Ruby programmer"`. If we wanted to build a method that can greet *anyone*, even Python programmers, we'd have to re-implement the majority of the original logic from `greeting`:
@@ -62,7 +62,7 @@ def greeting_python
 end
 ```
 
-Notice the only things that changed are the method name and the language name `"Python"` in the body of the method. It's as though that information should be specifiable or configurable when you call the method, otherwise we'd have to build every permutation of the method. In other words, we'd have to re-write the method for every single person we want to greet. We want our method to be more dynamic, more abstract, *more re-usable*. It should maintain the elements that will always be the same, no matter who we greet, and allow us to change, or swap out, the name of the person we are greeting. This is dynamic, as opposed to "hard-coded". 
+Notice the only things that changed are the method name and the language name `"Python"` in the body of the method. It's as though that information should be specifiable or configurable when you call the method, otherwise we'd have to build every permutation of the method. In other words, we'd have to re-write the method for every single person we want to greet. We want our method to be more dynamic, more abstract, *more re-usable*. It should maintain the elements that will always be the same, no matter who we greet, and allow us to change, or swap out, the name of the person we are greeting. This is dynamic, as opposed to "hard-coded".
 
 Good news, that's exactly what method arguments (also called parameters) are for:
 
@@ -72,7 +72,7 @@ def greeting(name)
 end
 ```
 
-Above, we define our method to take in an argument by following the method name with parentheses enclosing a variable name: `greeting(name)`. 
+Above, we define our method to take in an argument by following the method name with parentheses enclosing a variable name: `greeting(name)`.
 
 Then, we use **string interpolation** inside the method body to `puts` out a greeting using whatever `name` was passed into the argument when the method is called. String interpolation allows users to use a Ruby variable to render a value inside of a string. In other words, if we have a variable, `name`, that points to a value of `"Sophie"`, string interpolation will let us use that `name` variable inside a string to render, or `puts` out, a string that contains the word `"Sophie"`.
 
@@ -85,7 +85,7 @@ greeting("Sophie")
 # > Hello, Sophie!
 ```
 
-Let's take a closer look at how to add arguments to our methods. 
+Let's take a closer look at how to add arguments to our methods.
 
 ## Defining Method Arguments
 
@@ -102,12 +102,12 @@ end
 
 Arguments create new local variables that can be used within the method. When you name an argument, you are defining what bare word you want to use to access that data, just like when you create a variable. Arguments follow the same rules as local variables: they can be any word that starts with a lowercase letter and they should be as descriptive of the data as possible.
 
-In our `#greeting` method example, we are saying: When you call the `#greeting` method with an argument of `"Sophie"`, set a variable `name` equal to the value of `"Sophie"`. 
+In our `#greeting` method example, we are saying: When you call the `#greeting` method with an argument of `"Sophie"`, set a variable `name` equal to the value of `"Sophie"`.
 
 
 ### Defining Methods with Multiple Arguments
 
-You can define a method to accept as many arguments as you want. Let's try creating a method that accepts two arguments: a person's name and their programming language of choice. 
+You can define a method to accept as many arguments as you want. Let's try creating a method that accepts two arguments: a person's name and their programming language of choice.
 
 ```ruby
   # method name      first_argument, second_argument
@@ -116,8 +116,8 @@ def greeting_programmer(name, language)
 end
 
 greeting_programmer("Sophie", "Ruby")
-# > Hello, Sophie. We heard you are a great Ruby programmer. 
-  
+# > Hello, Sophie. We heard you are a great Ruby programmer.
+
 greeting_programmer("Steven", "Elixir")
 # > Hello, Steven. We heard you are a great Elixir programmer.
 ```
@@ -169,10 +169,45 @@ When we build that method we might ask ourselves, "who is this method designed t
 
 With the code above, when we say: `greeting("Sophie")`, the value of the argument `name` is `"Sophie"`. During the particular runtime invoked by `greeting("Sophie")`, any reference to `name` will have the value of `"Sophie"`, allowing the method to behave as intended.
 
-Similarly, when we say: `greeting("Ann")`, the value of the argument `name` is `"Ann"`. 
+Similarly, when we say: `greeting("Ann")`, the value of the argument `name` is `"Ann"`.
 
-Method arguments simply create local variables for you to refer to the value used when the method is actually invoked. 
+Method arguments simply create local variables for you to refer to the value used when the method is actually invoked.
 
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/ruby-arguments-readme' title='Method Arguments'>Method Arguments</a> on Learn.co and start learning to code for free.</p>
+## A Note on Calling Methods
+
+In the above examples, we're calling methods with parentheses, e.g., `greeting('Sophie')`. But you can also omit the parentheses: `greeting 'Sophie'`.
+
+When a method takes an argument, this is generally considered bad style, as it's a bit more difficult to understand what's going on. However, when you want to call a method without any arguments — e.g.,
+
+
+```ruby
+def say_hi
+	puts "Hi!"
+end
+
+say_hi
+```
+
+omitting the parentheses helps to clear things up. You might also see some Domain Specific Languages (DSLs) that prefer to omit parentheses. You've probably already seen a little bit of RSpec's DSL, for example:
+
+```ruby
+describe "MyRubyThing" do
+	it "runs" do
+		# test here
+	end
+end
+```
+
+`describe` and `it` are just methods — the above could have been written
+
+```ruby
+describe("MyRubyThing") do
+	it("runs") do
+		# test here
+	end
+end
+```
+
+but I think you'll agree that it looks nicer (and is easier to read) without the parentheses.
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/ruby-arguments-readme'>Methods and Arguments</a> on Learn.co and start learning to code for free.</p>
