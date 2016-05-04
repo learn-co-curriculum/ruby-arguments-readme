@@ -21,7 +21,7 @@ Imagine needing to build a method that greets a person. We could code something 
 
 ```ruby
 def greeting
-	puts "Hi, Ruby programmer!"
+  puts "Hi, Ruby programmer!"
 end
 ```
 
@@ -29,7 +29,7 @@ This method, when called, will print out to the terminal, the string `"Hi, Ruby 
 
 ```ruby
 def greeting
-	puts "Hi, Ruby programmer!"
+  puts "Hi, Ruby programmer!"
 end
 ```
 
@@ -182,7 +182,7 @@ When a method takes an argument, this is generally considered bad style, as it's
 
 ```ruby
 def say_hi
-	puts "Hi!"
+  puts "Hi!"
 end
 
 say_hi
@@ -192,9 +192,9 @@ omitting the parentheses helps to clear things up. You might also see some Domai
 
 ```ruby
 describe "MyRubyThing" do
-	it "runs" do
-		# test here
-	end
+  it "runs" do
+    # test here
+  end
 end
 ```
 
@@ -202,9 +202,9 @@ end
 
 ```ruby
 describe("MyRubyThing") do
-	it("runs") do
-		# test here
-	end
+  it("runs") do
+    # test here
+  end
 end
 ```
 
