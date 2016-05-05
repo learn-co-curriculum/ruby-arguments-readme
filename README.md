@@ -177,7 +177,7 @@ Method arguments simply create local variables for you to refer to the value use
 
 In the above examples, we're calling methods with parentheses, e.g., `greeting('Sophie')`. But you can also omit the parentheses: `greeting 'Sophie'`.
 
-When a method takes an argument, this is generally considered bad style, as it's a bit more difficult to understand what's going on. However, when you want to call a method without any arguments — e.g.,
+When a method takes an argument, omitting the parentheses is generally considered bad style, as it's a bit more difficult to understand what's going on. However, when you want to call a method without any arguments — e.g.,
 
 
 ```ruby
