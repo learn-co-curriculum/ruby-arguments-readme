@@ -54,7 +54,7 @@ Hi, Ruby programmer!
  => nil
 ```
 
-As amazing as this method is, it's still pretty literal. It hard-codes, or directly specifies, name of the person we are greeting as `"Ruby programmer"`. If we wanted to build a method that can greet *anyone*, even Python programmers, we'd have to re-implement the majority of the original logic from `greeting`:
+As amazing as this method is, it's still pretty literal. It hard-codes, or directly specifies, the name of the person we are greeting as `"Ruby programmer"`. If we wanted to build a method that can greet *anyone*, even Python programmers, we'd have to re-implement the majority of the original logic from `greeting`:
 
 ```ruby
 def greeting_python
@@ -211,3 +211,5 @@ end
 but I think you'll agree that it looks nicer (and is easier to read) without the parentheses.
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/ruby-arguments-readme'>Methods and Arguments</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/ruby-arguments-readme'>Methods and Arguments</a> on Learn.co and start learning to code for free.</p>
