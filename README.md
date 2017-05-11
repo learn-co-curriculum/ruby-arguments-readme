@@ -91,7 +91,7 @@ Let's take a closer look at how to add arguments to our methods.
 
 To add arguments to a method, you specify them in the method signature––the line that starts with `def`. Simply add parentheses after the name of the method and create a placeholder name for your argument.
 
-For example, if I want to write a method called `greeting` that accepts an argument of a person's name, I would do it like this:
+For example, if I want to write a method called `greeting_a_person` that accepts an argument of a person's name, I would do it like this:
 
 ```ruby
     #method name      #argument
