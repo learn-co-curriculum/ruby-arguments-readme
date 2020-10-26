@@ -294,5 +294,3 @@ end
 
 but I think you'll agree that it looks nicer (and is easier to read) without the
 parentheses.
-
-<p class='util--hide'>View <a href='https://learn.co/lessons/ruby-arguments-readme'>Methods and Parameters</a> on Learn.co and start learning to code for free.</p>
