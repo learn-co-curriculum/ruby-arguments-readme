@@ -89,7 +89,7 @@ def greeting(name)
 end
 ```
 
-Above, we define our method to take in an parameter by following the method name
+Above, we define our method to take in a parameter by following the method name
 with parentheses enclosing a variable name: `greeting(name)`.
 
 Then, we use **string interpolation** inside the method body to `puts` out a
@@ -124,7 +124,7 @@ line that starts with `def`. Simply add parentheses after the name of the method
 and create a placeholder name for your parameter.
 
 For example, if I want to write a method called `greeting_a_person` that accepts
-an parameter of a person's name, I would do it like this:
+a parameter of a person's name, I would do it like this:
 
 ```ruby
     #method name      #parameter
@@ -134,7 +134,7 @@ end
 ```
 
 Parameters create new local variables that can be used within the method. When
-you name an parameter, you are defining what bare word you want to use to access
+you name a parameter, you are defining what bare word you want to use to access
 that data, just like when you create a variable. Parameters follow the same rules
 as local variables: they can be any word that starts with a lowercase letter and
 they should be as descriptive of the data as possible.
@@ -194,7 +194,7 @@ Ah, here is where Ruby is being specific semantically. The error is called
 `#greeting`. It expects this because the method definition includes a parameter.
 
 In Ruby, all arguments are required when you invoke the method. You can't define
-a method to accept an parameter and call the method without an argument.
+a method to accept a parameter and call the method without an argument.
 Additionally, a method defined to accept one parameter will raise an error if
 called with more than one argument.
 
@@ -226,7 +226,7 @@ When we define a method with parameters we are defining a bareword that we can
 use to reference the actual value supplied to the method upon invocation. We
 built a method that will greet a specified person. In order to write code in our
 method to actually greet any given person, we need a placeholder––a way to refer
-to a generic person's name. This is an parameter.
+to a generic person's name. This is a parameter.
 
 When we build that method we might ask ourselves, "who is this method designed
 to greet?". The answer is "anyone, it doesn't matter." That's what makes the
