@@ -119,7 +119,7 @@ Let's take a closer look at how to add parameters to our methods.
 
 ## Defining Method Parameters
 
-To add parameters to a method, you specify them in the method signature––the
+To add parameters to a method, you specify them in the method signature &mdash; the
 line that starts with `def`. Simply add parentheses after the name of the method
 and create a placeholder name for your parameter.
 
@@ -225,7 +225,7 @@ end
 When we define a method with parameters we are defining a bareword that we can
 use to reference the actual value supplied to the method upon invocation. We
 built a method that will greet a specified person. In order to write code in our
-method to actually greet any given person, we need a placeholder––a way to refer
+method to actually greet any given person, we need a placeholder &mdash; a way to refer
 to a generic person's name. This is a parameter.
 
 When we build that method we might ask ourselves, "who is this method designed
@@ -260,7 +260,7 @@ greeting "Sophie"
 
 When a method takes a parameter, omitting the parentheses is generally
 considered bad style, as it's a bit more difficult to understand what's going
-on. However, when you want to call a method without any parameters — e.g.,
+on. However, when you want to call a method without any parameters, e.g.:
 
 ```ruby
 def say_hi
@@ -282,7 +282,7 @@ describe "MyRubyThing" do
 end
 ```
 
-`describe` and `it` are just methods — the above could have been written
+`describe` and `it` are just methods &mdash; the above could have been written
 
 ```ruby
 describe("MyRubyThing") do
