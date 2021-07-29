@@ -12,10 +12,6 @@ We'll cover how to define a method, and how to add and use parameters within met
 - Invoke a method with all required parameters
 - Use a method's parameters within the body of the method
 
-## Video
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/FJztnY9E854?rel=0&modestbranding=1" frameborder="0" allowfullscreen></iframe><p><a href="https://www.youtube.com/watch?v=FJztnY9E854">Ruby Method Parameters</a></p>
-
 ## Understanding Parameters
 
 Imagine needing to build a method that greets a person. We could code something
